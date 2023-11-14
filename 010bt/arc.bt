@@ -1,0 +1,36 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: arc.bt
+//   Authors: Kraby
+//   Version: 0.1
+//   Purpose: Parse Umihara Kawase Shun .arc archives
+//  Category: Archive
+// File Mask: *.arc
+//  ID Bytes: 
+//   History: 
+
+//------------------------------------------------
+
+
+struct FILE_INFO {
+    uint fileType <bgcolor=cLtRed>;
+    uint nameLocation <bgcolor=cDkRed>;
+    uint contentLocation <bgcolor=cDkPurple>;
+    uint size <bgcolor=cRed>;
+};
+
+int header1 <bgcolor=cBlack>;
+int header2 <bgcolor=cBlack>;
+int sectionCount <bgcolor=cDkGreen>;
+int fileCount <bgcolor=cGreen>;
+int content_start <bgcolor=cLtGreen>;
+
+
+local int i;
+for (i = 0; i < sectionCount; ++i)
+{
+    int fileCountCat <bgcolor=cBlue>;
+    FILE_INFO fileInfo[fileCountCat] <optimize=false>;
+}
+
