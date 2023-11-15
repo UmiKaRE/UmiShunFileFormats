@@ -1,0 +1,21 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: bin_filelist.bt
+//   Authors: Kraby
+//   Version: 1.0
+//   Purpose: Parse Umihara Kawase Shun .bin file lists
+//  Category: Archive
+// File Mask: *.bin
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct FILE_INFO {
+    int contentLocation <bgcolor=cDkPurple>;
+    int size <bgcolor=cRed>;
+};
+
+
+int fileCount <bgcolor=cGreen>;
+FILE_INFO files[fileCount];
