@@ -1,6 +1,6 @@
-Layer 1
+
+## Layer 1
 - 00: air
-- 04: half block ?
 - 08: solid
 - 09: solid (roof where you might be crushed)
 - 10: lower part of slope /| (horizontal 2-tiles)
@@ -17,18 +17,25 @@ Layer 1
 
 
 
-Layer 2
+## Layer 2
 
-Air
+The second layer behaves differently if the corresponding layer 1 tile is solid (then it indicates the terrain type) or if it's empty (then it indicates an entity type or other flags).
+
+Some entities can be further parametrized, for example 04 is a generic 'spawner' entity, the type is indicated by the tile directly to its right (eg 04 08). These parameters can be tricky (for example with the 1D yellow retracting blocks which have complex parametrization for their timings).
+
+I've only done a quick pass and might have made mistakes but some entities might depend on the header or other external data, eg 04 24.
+
+### Air
+
 - 01: ladder
 - 02: spawn / exit door
     - 00 exit door #1
     - 01 exit door #2
     - 04 spawn
     - 05 spawn
-- 03: no-enemy spawn flag ? 
+- 03: no-enemy spawn flag
 - 04: Generic spawning flag (spawns object on its right)
-    - 04: door (after boss)
+    - 04: door (after boss) ?
     - 07: backpack
     - 08: ennemy (red white fish)
     - 09: tuna fish ?
@@ -40,10 +47,10 @@ Air
     - 1C: ?
     - 1D: bird spawn (air)
     - 22: spawning ladder below ?
-    - 24: barred door / running barrel
-    - 2A: pufferfish
+    - 24: barred door / running water barrel boss
+    - 2A: pufferfish boss
     - 32: enemy (tuna fish)
-- 05: spawning flag
+- 05: spawning flag ditto ?
     - 11: barnacle
     - 20: tadpole boss ?
 - 1D 1D: expanding/retracting yellow blocks (2blocks wide)
